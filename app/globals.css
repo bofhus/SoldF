@@ -1,0 +1,35 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #eef1e7;
+  --foreground: #162117;
+  --muted: #546253;
+  --surface: rgba(255, 255, 255, 0.82);
+  --surface-strong: rgba(222, 231, 210, 0.84);
+  --accent: #728d46;
+}
+
+:root[data-theme='dark'] {
+  --background: #0d130d;
+  --foreground: #edf3e6;
+  --muted: #a9b8a8;
+  --surface: rgba(18, 27, 18, 0.82);
+  --surface-strong: rgba(34, 49, 34, 0.88);
+  --accent: #95c35b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(114, 141, 70, 0.18), transparent 34%),
+    linear-gradient(180deg, var(--background), color-mix(in oklab, var(--background) 78%, black));
+  color: var(--foreground);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 35%, transparent);
+}
